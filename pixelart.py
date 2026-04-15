@@ -21,7 +21,6 @@ for color in range(0, 255, rango):
     colores_disponibles.append(color)
 if 255 not in colores_disponibles:
     colores_disponibles.append(255)
-7
 matriz = np.array(img)
 
 for fila in matriz:
