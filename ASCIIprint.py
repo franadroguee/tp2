@@ -14,14 +14,6 @@ ancho = int(input('Ingrese el ancho de la imagen: '))
 altura = int(h * ancho / w)
 img = foto.resize((ancho, int(altura * 0.45)))
 
-colores_disponibles = []
-rango = (255 // 70)
-
-# colores
-for color in range(0, 255, rango):
-    colores_disponibles.append(color)
-print(colores_disponibles)
-
 matriz = np.array(img)
 
 for fila in matriz:
@@ -30,8 +22,8 @@ for fila in matriz:
         pixeles.append((pixel[0] + pixel[1] + pixel[2]) // 3)
         
 for pixel in pixeles:
-    indice = min(colores_disponibles, key=lambda x: abs(x - pixel[0]))
-    ASCIIpix.append(paleta[indice])
+    indice = int(pixel * 70 / 255)
+    ASCIIpix.append(str(paleta[indice]))
 
 fila = 0
 for pixel in ASCIIpix:
