@@ -11,6 +11,7 @@ foto = Image.open(str(input('Ingrese una imagen: ')))
 w, h = foto.size
 
 ancho = int(input('Ingrese el ancho de la imagen: '))
+print('\n')
 altura = int(h * ancho / w)
 img = foto.resize((ancho, int(altura * 0.45)))
 
