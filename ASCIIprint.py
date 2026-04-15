@@ -19,11 +19,11 @@ matriz = np.array(img)
 for fila in matriz:
     largo_fila = len(fila)
     for pixel in fila:
-        pixeles.append((pixel[0] + pixel[1] + pixel[2]) // 3)
+        pixeles.append(((int(pixel[0]) + int(pixel[1]) + int(pixel[2])) // 3))
         
 for pixel in pixeles:
     indice = int(pixel * 70 / 255)
-    ASCIIpix.append(str(paleta[indice]))
+    ASCIIpix.append(str(paleta[indice - 1]))
 
 fila = 0
 for pixel in ASCIIpix:

@@ -21,17 +21,16 @@ for color in range(0, 255, rango):
     colores_disponibles.append(color)
 if 255 not in colores_disponibles:
     colores_disponibles.append(255)
-print(colores_disponibles)
-
+7
 matriz = np.array(img)
 
 for fila in matriz:
     largo_fila = len(fila)
     for pixel in fila:
         
-        p_rojo.append(min(colores_disponibles, key=lambda x: abs(x - pixel[0])))
-        p_verde.append(min(colores_disponibles, key=lambda x: abs(x - pixel[1])))
-        p_azul.append(min(colores_disponibles, key=lambda x: abs(x - pixel[2])))
+        p_rojo.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[0]))))
+        p_verde.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[1]))))
+        p_azul.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[2]))))
         
 fila = 0
 for pixel in range(len(p_rojo)):
