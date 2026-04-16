@@ -28,7 +28,6 @@ matriz = np.array(img)
 for fila in matriz:
     largo_fila = len(fila)
     for pixel in fila:
-        
         p_rojo.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[0]))))
         p_verde.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[1]))))
         p_azul.append(min(colores_disponibles, key=lambda x: abs(x - int(pixel[2]))))
