@@ -7,7 +7,7 @@ paleta = ['$', '@', 'B', '%', '8', '&', 'W', 'M', '#', '*', 'o', 'a', 'h', 'k', 
 pixeles = []
 ASCIIpix = []
 
-foto = Image.open(str(input('Ingrese una imagen: ')))
+foto = Image.open(input('Ingrese una imagen: ')).convert('L')
 w, h = foto.size
 
 ancho = int(input('Ingrese el ancho de la imagen: '))
@@ -20,7 +20,7 @@ matriz = np.array(img)
 for fila in matriz:
     largo_fila = len(fila)
     for pixel in fila:
-        pixeles.append(255 - ((int(pixel[0]) + int(pixel[1]) + int(pixel[2])) // 3))
+        pixeles.append(255 - int(pixel))
         
 for pixel in pixeles:
     indice = int(pixel * 70 / 255)
