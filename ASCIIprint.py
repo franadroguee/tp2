@@ -6,6 +6,7 @@ paleta = ['$', '@', 'B', '%', '8', '&', 'W', 'M', '#', '*', 'o', 'a', 'h', 'k', 
 
 pixeles = []
 ASCIIpix = []
+ASCIIstr = ''
 
 foto = Image.open(input('Ingrese una imagen: ')).convert('L')
 w, h = foto.size
@@ -24,14 +25,20 @@ for fila in matriz:
         
 for pixel in pixeles:
     indice = int(pixel * 70 / 255)
-    ASCIIpix.append(str(paleta[indice - 1]))
+    ASCIIpix.append(paleta[indice - 1])
 
 fila = 0
 for pixel in ASCIIpix:
-    print(pixel, end = '')
+    ASCIIstr += pixel
     
     fila += 1
     
     if fila == largo_fila:
-        print('')
+        ASCIIstr += '\n'
         fila = 0
+
+ruta_salida = input('Ingrese la ruta de salida: ')
+ruta_salida = 'Pruebas\prueba.txt'
+
+with open(ruta_salida, 'w') as f:
+    f.write(ASCIIstr)
