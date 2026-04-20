@@ -39,7 +39,7 @@ for pixel in ASCIIpix:
         fila = 0
 
 ruta_salida = input('Ingrese la ruta de salida: ')
-ruta_salida = 'Pruebas\prueba.txt'
+ruta_salida = 'ASCII_savesprueba.txt'
 
 with open(ruta_salida, 'w') as f:
     f.write(ASCIIstr)
