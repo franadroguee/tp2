@@ -25,6 +25,7 @@ for fila in matriz:
         
 for pixel in pixeles:
     indice = int(pixel * 70 / 255)
+    if indice == 0: indice = 1
     ASCIIpix.append(paleta[indice - 1])
 
 fila = 0

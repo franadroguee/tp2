@@ -67,7 +67,7 @@ for imagen in range(frames + 1):
 
     w, h = foto.size
     
-    altura = 400
+    altura = 200
     ancho = int(w * altura / h)
 
     img = foto.resize((ancho, int(altura * 0.45)))
@@ -81,6 +81,7 @@ for imagen in range(frames + 1):
             
     for pixel in pixeles:
         indice = int(pixel * 70 / 255)
+        if indice == 0: indice = 1
         ASCIIpix.append(paleta[indice - 1])
 
     fila = 0
