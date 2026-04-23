@@ -36,8 +36,10 @@ def video():
 def gif():
     # Open the GIF
     filepath = input('Ingrese el gif: ')
+    
     if '\'' in filepath or '\"' in filepath:
         filepath = filepath [1:-1]
+        
     img = Image.open(input(filepath))
 
     # Iterate through each frame
