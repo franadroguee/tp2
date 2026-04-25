@@ -1,5 +1,1 @@
-#PRINCIPAL
-
-Hola salva, vas a ver esto pusheado y no vas a entender nada, perdoname, no cambie el repositorio para hacer codigos boludeando porque ya tenia todo el material que necesitaba aca
-
-abrazo 👍👍👍
+Este repositorio contiene el codigo del tp2 de la materia Pensamiento Computacional, UdeSA, año 1 semestre 1; Ingeniería en IA
