@@ -1,7 +1,5 @@
 from PIL import Image
 import numpy as np
-from termcolor import colored
-
 
 def distanciaR(lista_de_colores, pixel):
     '''analiza todos los colores posibles y retorna el que se asemeje para el rojo'''
@@ -35,8 +33,7 @@ def distanciaB(lista_de_colores, pixel):
             mejor_color = color
 
     return mejor_color
-    
-    
+  
 def PixelART(ruta_foto):
 
     foto = Image.open(ruta_foto)
