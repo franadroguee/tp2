@@ -2,15 +2,6 @@ from PIL import Image
 import numpy as np
 from termcolor import colored
 
-#*******************************************************************************************************************************
-#***************************************************DEFINICION DE VARIABLES*****************************************************
-
-p_rojo = []
-p_azul = []
-p_verde = []
-
-#*******************************************************************************************************************************
-#***************************************************DEFINICION DE FUNCIONES*****************************************************
 
 def distanciaR(lista_de_colores, pixel):
     '''analiza todos los colores posibles y retorna el que se asemeje para el rojo'''
@@ -45,15 +36,18 @@ def distanciaB(lista_de_colores, pixel):
 
     return mejor_color
     
-#*******************************************************************************************************************************
-#********************************************************CODIGO A CORRER********************************************************
+    
+def PixelART(ruta_foto):
 
-def PixelART():
-
-    foto = Image.open(input('Ingrese una imagen: '))
+    foto = Image.open(ruta_foto)
     tam_bloque = int(input('Ingrese el tamaño del bloque: '))
 
+    p_rojo = []
+    p_azul = []
+    p_verde = []
+
     colores_disponibles = []
+
     salto_colores = int(input('Ingrese el salto de colores: '))
     rango = 255 // salto_colores
 
@@ -68,6 +62,7 @@ def PixelART():
 
     h, w, _ = matriz.shape
 
+    nueva_imagen = Image.new("RGB", (w, h))
 
     # aplica los colorees nuevos agrupandolos en las dimensiones nuevas de los pixeles ingresadas (tam_bloque) 
     for i in range(0, h, tam_bloque):
@@ -88,11 +83,13 @@ def PixelART():
             p_verde.append(g)
             p_azul.append(b)
 
-            # reorganiza en el tamaño original 
-            for k in range(tam_bloque):
-                lineas_bloque[k] += colored('▓▓', (r, g, b)) * tam_bloque
 
-        for linea in lineas_bloque:
-            print(linea)
+            for y in range(i, min(i + tam_bloque, h)):
+                for x in range(j, min(j + tam_bloque, w)):
+                    nueva_imagen.putpixel((x, y), (r, g, b))
 
+                nueva_imagen.save("PixelArt.png")
+
+    print("Imagen guardada como PixelArt.png")
+            
 

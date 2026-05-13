@@ -3,14 +3,14 @@ import numpy as np
 from termcolor import colored
 
 
-def ASCIIprint():
+def ASCIIprint(ruta_foto):
     paleta = ['$', '@', 'B', '%', '8', '&', 'W', 'M', '#', '*', 'o', 'a', 'h', 'k', 'b', 'd', 'p', 'q', 'w', 'm', 'Z', 'O', '0', 'Q', 'L', 'C', 'J', 'U', 'Y', 'X', 'z', 'c', 'v', 'u', 'n', 'x', 'r', 'j', 'f', 't', '/', '\\', '|', '(', ')', '1', '{', '}', '[', ']', '?', '-', '_', '+', '~', '<', '>', 'i', '!', 'l', 'I', ';', ':', ',', '"', '^', '`', "'", '.', ' ']
 
     pixeles = []
     ASCIIpix = []
     ASCIIstr = ''
 
-    foto = Image.open(input('Ingrese una imagen: ')).convert('L')
+    foto = Image.open(ruta_foto).convert('L')
     w, h = foto.size
 
     ancho = int(input('Ingrese el ancho de la imagen: '))
