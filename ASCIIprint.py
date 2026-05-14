@@ -13,7 +13,11 @@ def ASCIIprint(ruta_foto):
     foto = Image.open(ruta_foto).convert('L')
     w, h = foto.size
 
-    ancho = int(input('Ingrese el ancho de la imagen: '))
+    ancho = input('Ingrese el ancho de la imagen: ')
+    
+    while not ancho.isdigit():
+        ancho = input('Ingrese el ancho de la imagen: ')
+    
     print('\n')
     altura = int(h * ancho / w)
     img = foto.resize((ancho, int(altura * 0.45)))
