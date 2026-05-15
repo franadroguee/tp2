@@ -17,6 +17,8 @@ def ASCIIprint(ruta_foto):
     
     while not ancho.isdigit():
         ancho = input('Ingrese el ancho de la imagen: ')
+        
+    ancho = int(ancho)
     
     print('\n')
     altura = int(h * ancho / w)
@@ -44,7 +46,7 @@ def ASCIIprint(ruta_foto):
             ASCIIstr += '\n'
             fila = 0
 
-    ruta_salida = input('Ingrese la ruta de salida: ')
+    ruta_salida = input('Ingrese la ruta de salida: ') # e.j.: ASCII_saves/Marylin.txt
 
     with open(ruta_salida, 'w') as f:
         f.write(ASCIIstr)
