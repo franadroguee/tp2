@@ -1,6 +1,7 @@
 from PIL import Image
 import numpy as np
 from termcolor import colored
+import os
 
 
 def ASCIIprint(ruta_foto):
@@ -20,7 +21,6 @@ def ASCIIprint(ruta_foto):
         
     ancho = int(ancho)
     
-    print('\n')
     altura = int(h * ancho / w)
     img = foto.resize((ancho, int(altura * 0.45)))
 
@@ -46,7 +46,7 @@ def ASCIIprint(ruta_foto):
             ASCIIstr += '\n'
             fila = 0
 
-    ruta_salida = input('Ingrese la ruta de salida: ') # e.j.: ASCII_saves/Marylin.txt
+    nombre_archivo = input('Ingrese nombre que desea darle al archivo (solo nombre): ') # e.j.: Marylin
 
-    with open(ruta_salida, 'w') as f:
-        f.write(ASCIIstr)
+    with open(os.path.join('.', 'ASCII_saves', f'{nombre_archivo}.txt'), 'w') as file:
+        file.write(ASCIIstr)
